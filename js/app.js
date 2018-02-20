@@ -12,29 +12,32 @@ var persons = [
 var numberArray = [1,2,3,4,5,6,7,8,9,10];
 
 
-
-function functionCallBack(array,callback) {
-  callback(array);
-}
-
 // 1 ) Crea tu propia función forEach que funcione igual a Array.forEach. Algo asi:
-function myForEach(array){
+function myForEach(array,callback){
 		// var person = document.getElementById("info");
     for (var i = 0; i < array.length; i++) {
-      console.log(array[i]);
+      callback(array[i]);
     }
 	}
+  myForEach(persons,showForEach);
   
-  functionCallBack(persons,myForEach);
+  function showForEach(i) {
+    console.log(i);
+  }
+
 
 // 2 ) Crea tu propia función map que funcione igual a Array.map. Algo asi:
-function miMap(arreglo, callback){
-    // var mapArray = [];
-    // for (var i = 0; i < array.length; i++) {
-    //   mapArray.push(array[i][])
-    // }
+function miMap(array, callback){
+    var newArray = [];
+    for (var i = 0; i < array.length; i++) {
+      newArray.push(array[i] *2);
+    }
+    console.log(newArray);
+    return newArray;
 	}
-//
+
+
+
 // 3 ) Crea tu propia función filter que funcione igual a Array.filter. Algo asi:
 function miFilter(array, callback){
     var evenNumbers = [];
@@ -47,10 +50,13 @@ function miFilter(array, callback){
     return evenNumbers;
 	}
 
-  functionCallBack(numberArray,miFilter);
+
 //
 // 4 ) Crea tu propia función reduce que funcione igual a Array.reduce. Algo asi:
-function miReduce(arreglo, reduce){
+function miReduce(array, reduce){
+
+
+
 
 	}
 
